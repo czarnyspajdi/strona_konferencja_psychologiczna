@@ -13,7 +13,7 @@ body {
 }
 
 /* Sekcja główna */
-.hero {
+header {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -80,7 +80,7 @@ main>section {
     align-items: center;
 }
 
-.section img {
+section img {
     max-width: 100%;
     width: 300px;
     border-radius: 10px;
