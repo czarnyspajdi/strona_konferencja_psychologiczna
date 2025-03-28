@@ -3,28 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konferencja psychologiczna</title>
+    <title>Konferencja Psychologiczna</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-
-    <header>
-        <h1>Konferencja psychologiczna :D</h1>
+    <!-- Sekcja powitalna -->
+    <header class="hero">
+        <h1>Konferencja Psychologiczna</h1>
+        <h2>Odkryj tajniki ludzkiego umysłu</h2>
+        <div class="countdown" id="countdown">00:00:00:00</div>
     </header>
 
-    <main>
+    <!-- Strzałka przewijania -->
+    <div class="scroll-arrow" id="scrollArrow">⬇️</div>
 
+    <!-- Sekcja z treścią -->
+    <main>
+        <section>
+            <img src="https://source.unsplash.com/300x200/?brain,psychology" alt="Psychologia">
+            <div class="text">
+                <h3>Co nas czeka?</h3>
+                <p>Eksperci z całego świata podzielą się wiedzą na temat psychologii i zdrowia psychicznego.</p>
+            </div>
+        </section>
+
+        <section>
+            <img src="https://source.unsplash.com/300x200/?people,talking" alt="Dyskusja">
+            <div class="text">
+                <h3>Panel dyskusyjny</h3>
+                <p>Interaktywne debaty i panele eksperckie pozwolą Ci lepiej zrozumieć ludzką psychikę.</p>
+            </div>
+        </section>
+
+        <section>
+            <img src="https://source.unsplash.com/300x200/?conference" alt="Konferencja">
+            <div class="text">
+                <h3>Inspirujące wykłady</h3>
+                <p>Dowiedz się więcej o wpływie emocji, stresu i świadomości na nasze życie.</p>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <p>Kontakt:
-        <ul>
-<li><a href="mailto:mrm.komisja.edukacji@gmail.com">Adres email</a></li>
-        </ul>
-        
-        </p>
-    </footer>
-
-<script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

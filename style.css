@@ -1,0 +1,125 @@
+/* Globalne ustawienia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #0a1931;
+    color: white;
+    text-align: center;
+}
+
+/* Sekcja główna */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to bottom, #0a1931, #162447);
+    position: relative;
+}
+
+h1 {
+    font-size: 3em;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+h2 {
+    font-size: 1.8em;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.5s ease-out forwards 0.5s;
+}
+
+/* Zegar */
+.countdown {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-top: 20px;
+    letter-spacing: 3px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.5s ease-out forwards 1s;
+}
+
+/* Strzałka przewijania */
+.scroll-arrow {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 3em;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+    animation: bounce 1.5s infinite ease-in-out;
+}
+
+.scroll-arrow.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+/* Sekcja treści */
+main {
+    padding: 50px 10%;
+    text-align: left;
+}
+
+main>section {
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.section img {
+    max-width: 100%;
+    width: 300px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.text {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Animacje */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section img {
+        margin: 0 0 20px 0;
+    }
+}
