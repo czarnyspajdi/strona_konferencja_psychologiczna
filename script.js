@@ -1,16 +1,39 @@
 // SCRIPT HAHA
 
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollArrow = document.getElementById("scrollArrow");
+    const countdownElement = document.getElementById("countdown");
 
-function countDaysToEvent() {
-    const today = new Date();
-    // wstawić tu poprawną date
-    const eventDay = new Date(2025, 4, 29);
-    const diff = Math.ceil((eventDay - today) / (1000 * 60 * 60 * 24));
+    // Strzałka znika po przewinięciu
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+            scrollArrow.classList.add("hidden");
+        } else {
+            scrollArrow.classList.remove("hidden");
+        }
+    });
 
-    console.log(`There is ${diff} days left`);
-}
+    // Funkcja do aktualizacji zegara
+    function updateCountdown() {
+        const targetDate = new Date("2025-05-29T00:00:00").getTime();
+        const now = new Date().getTime();
+        const difference = targetDate - now;
 
-document.addEventListener("DOMContentLoaded", () => {
-    // można przypisać wartość tego do jakiegoś elementu
-    countDaysToEvent();
+        if (difference <= 0) {
+            countdownElement.innerHTML = "00:00:00:00";
+            return;
+        }
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        // Format DD:HH:MM:SS
+        countdownElement.innerHTML = `${String(days).padStart(2, '0')}:${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    }
+
+    // Odświeżanie zegara co sekundę
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
 });

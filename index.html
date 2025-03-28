@@ -3,28 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konferencja psychologiczna</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Konferencja Psychologiczna</title>
+    <style>
+        /* Globalne ustawienia */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0a1931;
+            color: white;
+            text-align: center;
+        }
+
+        /* Sekcja główna */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(to bottom, #0a1931, #162447);
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3em;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1.5s ease-out forwards 0.5s;
+        }
+
+        /* Zegar */
+        .countdown {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-top: 20px;
+            letter-spacing: 3px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1.5s ease-out forwards 1s;
+        }
+
+        /* Strzałka przewijania */
+        .scroll-arrow {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 3em;
+            opacity: 0.8;
+            cursor: pointer;
+            transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+            animation: bounce 1.5s infinite ease-in-out;
+        }
+
+        .scroll-arrow.hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+
+        /* Sekcja treści */
+        .content {
+            padding: 50px 10%;
+            text-align: left;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .section img {
+            max-width: 100%;
+            width: 300px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .text {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        /* Animacje */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        /* Responsywność */
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .section img {
+                margin: 0 0 20px 0;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Sekcja powitalna -->
+    <div class="hero">
+        <h1>Konferencja Psychologiczna</h1>
+        <h2>Odkryj tajniki ludzkiego umysłu</h2>
+        <div class="countdown" id="countdown">00:00:00:00</div>
+    </div>
 
-    <header>
-        <h1>Konferencja psychologiczna :D</h1>
-    </header>
+    <!-- Strzałka przewijania -->
+    <div class="scroll-arrow" id="scrollArrow">⬇️</div>
 
-    <main>
+    <!-- Sekcja z treścią -->
+    <div class="content">
+        <div class="section">
+            <img src="https://source.unsplash.com/300x200/?brain,psychology" alt="Psychologia">
+            <div class="text">
+                <h3>Co nas czeka?</h3>
+                <p>Eksperci z całego świata podzielą się wiedzą na temat psychologii i zdrowia psychicznego.</p>
+            </div>
+        </div>
 
-    </main>
+        <div class="section">
+            <img src="https://source.unsplash.com/300x200/?people,talking" alt="Dyskusja">
+            <div class="text">
+                <h3>Panel dyskusyjny</h3>
+                <p>Interaktywne debaty i panele eksperckie pozwolą Ci lepiej zrozumieć ludzką psychikę.</p>
+            </div>
+        </div>
 
-    <footer>
-        <p>Kontakt:
-        <ul>
-<li><a href="mailto:mrm.komisja.edukacji@gmail.com">Adres email</a></li>
-        </ul>
-        
-        </p>
-    </footer>
+        <div class="section">
+            <img src="https://source.unsplash.com/300x200/?conference" alt="Konferencja">
+            <div class="text">
+                <h3>Inspirujące wykłady</h3>
+                <p>Dowiedz się więcej o wpływie emocji, stresu i świadomości na nasze życie.</p>
+            </div>
+        </div>
+    </div>
 
-<script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
