@@ -1,6 +1,6 @@
 // SCRIPT HAHA
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     const scrollArrow = document.getElementById("scrollArrow");
     const countdownElement = document.getElementById("countdown");
 
