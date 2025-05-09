@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konferencja Psychologiczna</title>
+    <title>Konferencja o Zdrowiu Psychicznym</title>
     <style>
         /* Globalne ustawienia */
         * {
@@ -36,6 +36,7 @@
             opacity: 0;
             transform: translateY(-20px);
             animation: fadeIn 1.5s ease-out forwards;
+			margin-bottom: 20px;
         }
 
         h2 {
@@ -44,6 +45,7 @@
             transform: translateY(20px);
             animation: fadeIn 1.5s ease-out forwards 0.5s;
         }
+
 
         /* Zegar */
         .countdown {
@@ -112,6 +114,64 @@
             50% { transform: translateY(10px); }
         }
 
+        /* Sekcja agenda (tabela) */
+.agenda table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.agenda th, .agenda td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #fff;
+}
+
+.agenda th {
+    background-color: #101a33;
+    font-size: 1.5em;
+}
+
+.agenda td {
+    background-color: #162447;
+    font-size: 1.2em;
+}
+
+
+        /* Nowe sekcje */
+        .section-title {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .section-text {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Sekcja partnerzy */
+        .partners {
+            background-color: #162447;
+            padding: 50px 10%;
+            text-align: center;
+        }
+
+        .partners h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .partners ul {
+            list-style-type: none;
+            padding-left: 0;
+            font-size: 1.2em;
+        }
+
+        .partners li {
+            margin-bottom: 10px;
+        }
+
         /* Responsywność */
         @media (max-width: 768px) {
             .section {
@@ -122,6 +182,18 @@
             .section img {
                 margin: 0 0 20px 0;
             }
+
+            .agenda h2 {
+                font-size: 2em;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .section-text {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
@@ -129,42 +201,72 @@
 
     <!-- Sekcja powitalna -->
     <div class="hero">
-        <h1>Konferencja Psychologiczna</h1>
-        <h2>Odkryj tajniki ludzkiego umysłu</h2>
+        <h1>O relacjach między bliskością, a cyfrową rzeczywistością</h1>
+        <h2>Konferencja o Zdrowiu Psychicznym Młodzieżowej Rady Miasta Szczecin</h2>
         <div class="countdown" id="countdown">00:00:00:00</div>
     </div>
 
     <!-- Strzałka przewijania -->
     <div class="scroll-arrow" id="scrollArrow">⬇️</div>
 
-    <!-- Sekcja z treścią -->
+        <!-- Sekcja Agenda -->
+<div class="content agenda">
+    <h2>Agenda</h2>
+    <table>
+        <tr>
+            <th>Godzina</th>
+            <th>Wydarzenie</th>
+        </tr>
+        <tr>
+            <td>9:00 - 10:00</td>
+            <td>Rejestracja uczestników</td>
+        </tr>
+        <tr>
+            <td>10:00 - 12:00</td>
+            <td>Wprowadzenie do psychologii poznawczej</td>
+        </tr>
+        <tr>
+            <td>12:00 - 13:00</td>
+            <td>Przerwa na lunch</td>
+        </tr>
+        <tr>
+            <td>13:00 - 15:00</td>
+            <td>Warsztaty praktyczne: Techniki terapeutyczne</td>
+        </tr>
+        <tr>
+            <td>15:00 - 17:00</td>
+            <td>Dyskusja panelowa: Wyzwania współczesnej psychologii</td>
+        </tr>
+    </table>
+</div>
+
+    </div>
+
+    <!-- Sekcja "Dlaczego warto uczestniczyć?" -->
     <div class="content">
-        <div class="section">
-            <img src="https://source.unsplash.com/300x200/?brain,psychology" alt="Psychologia">
-            <div class="text">
-                <h3>Co nas czeka?</h3>
-                <p>Eksperci z całego świata podzielą się wiedzą na temat psychologii i zdrowia psychicznego.</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <img src="https://source.unsplash.com/300x200/?people,talking" alt="Dyskusja">
-            <div class="text">
-                <h3>Panel dyskusyjny</h3>
-                <p>Interaktywne debaty i panele eksperckie pozwolą Ci lepiej zrozumieć ludzką psychikę.</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <img src="https://source.unsplash.com/300x200/?conference" alt="Konferencja">
-            <div class="text">
-                <h3>Inspirujące wykłady</h3>
-                <p>Dowiedz się więcej o wpływie emocji, stresu i świadomości na nasze życie.</p>
-            </div>
+        <div class="section-title">Dlaczego warto uczestniczyć?</div>
+        <div class="section-text">
+            Konferencja to doskonała okazja do pogłębienia swojej wiedzy z zakresu psychologii. Uczestnicy będą mieli okazję do interakcji z ekspertami i wymiany doświadczeń, a także poznają najnowsze osiągnięcia w tej dziedzinie.
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Sekcja "Gdzie i kiedy?" -->
+    <div class="content">
+        <div class="section-title">Gdzie i kiedy?</div>
+        <div class="section-text">
+            Konferencja odbędzie się w dniach 1-3 czerwca 2025 roku w Centrum Konferencyjnym w Warszawie. Rejestracja rozpoczęła się już teraz, więc nie zwlekaj i zarejestruj się na wydarzenie!
+        </div>
+    </div>
 
+    <!-- Sekcja organizator -->
+    <div class="content">
+        <div class="section-title">Organizator</div>
+        <div class="section-text">
+            Młodzieżowa Rada Miasta Szczecin
+        </div>
+    </div>
+	
+	    <script src="script.js"></script>
+		
 </body>
 </html>
