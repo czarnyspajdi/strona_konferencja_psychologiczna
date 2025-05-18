@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Funkcja do aktualizacji zegara
     function updateCountdown() {
-        const targetDate = new Date("2025-05-29T00:00:00").getTime();
+        const targetDate = new Date("2025-05-29T10:00:00").getTime();
         const now = new Date().getTime();
         const difference = targetDate - now;
 
